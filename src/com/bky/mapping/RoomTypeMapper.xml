@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bky.dao.RoomTypeMapper">
+	<resultMap type="com.bky.model.RoomType" id="RoomTypeResult">
+		<id property="roomTypeId" column="RoomTypeId"/>
+		<result property="roomNum" column="RoomNum"/>
+		<result property="roomTypeName" column="RoomTypeName"/>
+		<result property="roomTypeshow" column="RoomTypeshow"/>
+		<result property="roomTypeMoney" column="RoomTypeMoney"/>
+		<result property="roomTypeNum" column="RoomTypeNum"/>
+	</resultMap>
+	<!-- 公共使用sql语句 -->
+	<sql id="Base_RoomType">
+		RoomNum,RoomTypeName,RoomTypeshow,RoomTypeMoney,RoomTypeNum
+	</sql>
+	<!-- 添加房间类型 -->
+	<insert id="addRoomType" parameterType="com.bky.model.RoomType">
+		insert into roomtype (RoomNum, RoomTypeName, RoomTypeshow, RoomTypeMoney, RoomTypeNum)
+		values (#{roomNum}, #{roomTypeName},#{roomTypeshow},#{roomTypeMoney},#{roomTypeNum})
+	</insert>
+	<!-- 删除房间类型 -->
+	<delete id="deleteRoomType" parameterType="java.lang.Integer">
+		delete from roomtype where RoomTypeId = #{roomTypeId}
+	</delete>
+	<!-- 修改房间类型信息 -->
+	<update id="updateRoomType" parameterType="com.bky.model.RoomType">
+		update roomtype 
+		set RoomNum = #{roomNum},
+			RoomTypeName = #{roomTypeName},
+			RoomTypeshow = #{roomTypeshow},
+			RoomTypeMoney = #{roomTypeMoney},
+			RoomTypeNum = #{roomTypeNum} 
+			where RoomTypeId = #{roomTypeId}
+	</update>
+	<!-- 根据roomtypeid单独查询 -->
+	<select id="selById" resultMap="RoomTypeResult" parameterType="java.lang.Integer">
+		select 
+		<include refid="Base_RoomType"/>
+		from roomtype 
+		where RoomTypeId = #{roomTypeId}
+	</select>
+	<!-- 查询所有 -->
+	<select id="selAll" resultMap="RoomTypeResult">
+		select * from roomtype
+	</select>
+</mapper>

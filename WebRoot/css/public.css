@@ -1,0 +1,19 @@
+﻿* {margin:0;padding:0;list-style:none ;font-family:Tahoma;}
+.count {height:100%;width:100%;border :1px solid #D2CECE;}
+.cont {width:100px;height:100px;border :1px solid #D2CECE;background-color:#91BFDE;float :left ;
+margin:4px 4px;text-align: center;line-height: 104px;font-size: 15px;}
+.p-ml {width: 966px;padding-top:20px;text-align:center;}
+.p-ml img {position:relative;top:4px;}
+.txt-time {width:120px;height:18px;border :1px solid gray;}
+ table{width: 966px;border-right: #a6cfee solid 1px;margin:0px 10px 10px 20px;}
+ tr{height: 30px;}
+.bg {background-color:#B4D2F6;}
+ th{background-color: #b4d2f6;border-left:#a6cfee solid 1px;border-bottom: #a6cfee solid 1px;}
+ td{border-left:1px #a6cfee solid;border-bottom:1px #a6cfee solid;border-top:1px #a6cfee solid;text-align: center;line-height:30px;}
+.bh {margin-left:100px;}
+.at {text-align:center;width: 966px;padding-top:10px;margin-bottom:10px;}
+.btnadd {margin-left:10px;}
+.btn{background:url(../images/mn.jpg) no-repeat;width:70px;height:25px;border :none ;font-size:15px;color:white;}
+td img {height:25px;width:25px;margin:4px auto;vertical-align:middle;margin:0 3px;}
+td{font-family:Tahoma；}
+.input-txt {margin-left:100px;}

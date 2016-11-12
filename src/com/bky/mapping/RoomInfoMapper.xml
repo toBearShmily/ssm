@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bky.dao.RoomInfoDao">
+	<resultMap type="com.bky.model.RoomInfo" id="RoomInfoResult">
+		<id property="roomId" column="roomId"/>
+		<result property="roomNum" column="roomNum"/>
+		<result property="roomType" column="roomType"/>
+		<result property="loucengNum" column="loucengNum"/>
+		<result property="checkInPeopleNum" column="checkInPeopleNum"/>
+		<result property="bedNum" column="bedNum"/>
+		<result property="roomState" column="roomState"/>
+		<result property="context" column="context"/>
+		<result property="price" column="price"/>
+	</resultMap>
+	<select id="selByroomId" resultType="com.bky.model.RoomInfo" parameterType="java.lang.Integer">
+		select * from roominfo where roomId = #{roomId}
+	</select>
+	<select id="selAll" resultMap="RoomInfoResult">
+		select * from roominfo
+	</select>
+	<update id="updateRoomInfo" parameterType="com.bky.model.RoomInfo">
+		update roominfo 
+		set roomNum = #{roomNum},
+			roomType = #{roomType},
+			loucengNum = #{loucengNum},
+			checkInPeopleNum = #{checkInPeopleNum},
+			bedNum = #{bedNum},
+			roomState = #{roomState},
+			context = #{context},
+			price = #{price} where roomId = #{roomId}
+	</update>
+	<delete id="delRoomInfo" parameterType="java.lang.Integer">
+		delete from roominfo where roomId = #{roomId}
+	</delete>
+</mapper>
