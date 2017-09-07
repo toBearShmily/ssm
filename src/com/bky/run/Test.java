@@ -30,6 +30,7 @@ public class Test {
     // 利用线程在文件的指定位置写入指定数据  
     static class FileWriteThread extends Thread{ 
     	System.out.print("666");
+	System.out.print("bug update");
         private int skip;  
         private byte[] content;  
           
