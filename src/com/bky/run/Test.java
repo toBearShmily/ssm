@@ -33,7 +33,7 @@ public class Test {
 	System.out.print("bug update two");
         private int skip;  
         private byte[] content;  
-          
+        System.out.print("new pro");  
         public FileWriteThread(int skip,byte[] content){  
             this.skip = skip;  
             this.content = content;  
